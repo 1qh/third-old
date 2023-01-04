@@ -1,10 +1,10 @@
 import { IconType } from 'react-icons'
-import { HiHome, HiPaperAirplane, HiUserCircle, HiViewBoards } from 'react-icons/hi'
+import { HiArchive, HiHome, HiPaperAirplane, HiUserCircle, HiViewBoards } from 'react-icons/hi'
 
 export type Item = {
 	name: string
 	slug: string
-	icon?: IconType
+	icon: IconType
 }
 
 export const links: Item[] = [
@@ -14,8 +14,8 @@ export const links: Item[] = [
 		icon: HiHome
 	},
 	{
-		name: 'Campaigns',
-		slug: 'campaigns',
+		name: 'Browse',
+		slug: 'browse',
 		icon: HiViewBoards
 	},
 	{
@@ -30,6 +30,7 @@ export const links: Item[] = [
 	},
 	{
 		name: 'Test',
-		slug: 'test'
+		slug: 'test',
+		icon: HiArchive
 	}
 ]

@@ -54,7 +54,7 @@ import {
 
 export default function HomePage(): JSX.Element {
 	return (
-		<div className="p-6">
+		<div>
 			<section>
 				<header>
 					<h1 className="mb-6 text-5xl font-extrabold dark:text-white">

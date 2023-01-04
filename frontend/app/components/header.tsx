@@ -6,7 +6,7 @@ const Header: FC<Record<string, never>> = function () {
 	const { isOpenOnSmallScreens, isPageWithSidebar, setOpenOnSmallScreens } = useSidebarContext()
 
 	return (
-		<header className="sticky top-0 z-20 dark:bg-black px-2">
+		<header className="sticky top-0 z-20 bg-white dark:bg-black px-2">
 			<Navbar fluid className="rounded-[32px] shadow-lg shadow-gray-300 dark:shadow-gray-600">
 				{isPageWithSidebar && (
 					<button
@@ -45,18 +45,8 @@ const Header: FC<Record<string, never>> = function () {
 					</span>
 				</Navbar.Brand>
 				<div className="flex md:order-2">
-					{/* <Navbar.Toggle /> */}
 					<DarkThemeToggle className="rounded-full" />
 				</div>
-				{/* <Navbar.Collapse>
-					<Navbar.Link href="/" active>
-						Home
-					</Navbar.Link>
-					<Navbar.Link href="/">About</Navbar.Link>
-					<Navbar.Link href="/">Services</Navbar.Link>
-					<Navbar.Link href="/">Pricing</Navbar.Link>
-					<Navbar.Link href="/">Contact</Navbar.Link>
-				</Navbar.Collapse> */}
 			</Navbar>
 		</header>
 	)

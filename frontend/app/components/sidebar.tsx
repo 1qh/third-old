@@ -1,22 +1,29 @@
+'use client'
+
 import classNames from 'classnames'
 import { Sidebar as FlowbiteSidebar } from 'flowbite-react'
 import type { FC, PropsWithChildren } from 'react'
+import { useState } from 'react'
 import { useSidebarContext } from '../context/SidebarContext'
 
 const Sidebar: FC<PropsWithChildren<Record<string, unknown>>> = function ({ children }) {
 	const { isOpenOnSmallScreens: isSidebarOpenOnSmallScreens } = useSidebarContext()
+	const [isOpen, setOpen] = useState(false)
 
+	function toggle() {
+		setOpen(!isOpen)
+	}
 	return (
 		<div
 			className={classNames(
-				'fixed overflow-hidden ml-2 top-20 h-content z-10 lg:sticky lg:!block',
+				'fixed overflow-hidden ml-2 top-20 h-content z-10 lg:sticky lg:!block rounded-2xl',
 				{ hidden: !isSidebarOpenOnSmallScreens },
 				{
-					'shadow-lg shadow-gray-300 dark:shadow-gray-500 dark:shadow-lg rounded-xl':
+					'shadow-lg shadow-gray-300 dark:shadow-gray-500 dark:shadow-lg':
 						isSidebarOpenOnSmallScreens
 				}
 			)}>
-			<FlowbiteSidebar className="dark:bg-black -mx-3 -my-4">{children}</FlowbiteSidebar>
+			<FlowbiteSidebar className="w-content">{children}</FlowbiteSidebar>
 		</div>
 	)
 }

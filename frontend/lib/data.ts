@@ -1,6 +1,15 @@
 import { IconType } from 'react-icons'
 import { HiArchive, HiHome, HiPaperAirplane, HiUserCircle, HiViewBoards } from 'react-icons/hi'
 
+export type CampaignForm = {
+	name: string
+	title: string
+	description: string
+	target: string
+	deadline: string
+	image: string
+}
+
 export type Item = {
 	name: string
 	slug: string
